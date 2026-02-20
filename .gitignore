@@ -1,0 +1,21 @@
+
+# Virtual Environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Deployment archives
+*.zip
+*.rar
+*.7z
+
+# System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor directories
+.sublime-workspace
+.vscode/
+.idea/

@@ -604,83 +604,6 @@ footer {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .features {
-        justify-content: center;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-        /* Reduced from 3.5rem to fit better */
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .hamburger {
-        display: block;
-        z-index: 1001;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        /* Below header */
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    /* Make floating buttons icon-only on mobile to save space */
-    .floating-btn span {
-        display: none;
-    }
-
-    .floating-btn {
-        padding: 12px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
-
-    /* Adapt hours widget for mobile */
-    .hours-widget {
-        display: block;
-        bottom: 10px;
-        left: 10px;
-        padding: 8px 12px;
-        font-size: 0.7rem;
-        width: auto;
-        max-width: 150px;
-        border-left: 3px solid #ff4500;
-        z-index: 900;
-        /* Lower than modal/menu */
-    }
-
-    .hours-widget h4 {
-        font-size: 0.8rem;
-        margin-bottom: 2px;
-    }
-}
-
-/* --- Floating Widgets --- */
 /* --- Floating Widgets --- */
 .floating-btn {
     position: fixed;
@@ -762,6 +685,93 @@ footer {
         opacity: 1;
     }
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        /* Reduced from 3.5rem to fit better */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        /* Below header */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Make floating buttons icon-only on mobile to save space */
+    .floating-btn span {
+        display: none;
+    }
+
+    .floating-btn {
+        padding: 0;
+        /* Clear padding to allow SVG to center */
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .floating-btn svg {
+        width: 24px;
+        /* Explicit size for mobile */
+        height: 24px;
+    }
+
+    /* Adapt hours widget for mobile */
+    .hours-widget {
+        display: block;
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 0.7rem;
+        width: auto;
+        max-width: 150px;
+        border-left: 3px solid #ff4500;
+        z-index: 900;
+        /* Lower than modal/menu */
+    }
+
+    .hours-widget h4 {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 480px) {

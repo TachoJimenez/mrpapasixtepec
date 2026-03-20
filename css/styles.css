@@ -981,6 +981,32 @@ footer {
   }
 }
 
+.status-dot {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.status-dot.open {
+  background-color: #00e676;
+  box-shadow: 0 0 10px #00e676;
+}
+
+.status-dot.closing {
+  background-color: #ffd600;
+  box-shadow: 0 0 10px #ffd600;
+}
+
+.status-dot.closed {
+  background-color: #ff1744;
+  box-shadow: 0 0 10px #ff1744;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hours-widget {
@@ -994,6 +1020,8 @@ footer {
     width: max-content;
     background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
   }
   .hours-widget h4 {
     display: none; /* Hide the big "Horario" title */
@@ -1003,9 +1031,14 @@ footer {
     margin: 0;
   }
   .hours-widget p::before {
-    content: "🕒 Hoy: 3:00 PM - 10:30 PM"; /* Compact 1-liner */
+    content: "Hoy: 3:00 PM - 10:30 PM"; /* Compact 1-liner */
     font-size: 0.85rem;
     font-weight: bold;
     color: white;
+  }
+  .status-dot {
+    position: static;
+    display: block;
+    margin-right: 8px;
   }
 }

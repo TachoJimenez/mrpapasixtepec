@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dynamic Hours Status Indicator
     const hoursWidget = document.querySelector('.hours-widget');
     if (hoursWidget) {
-        hoursWidget.style.position = 'relative'; // Ensure absolute dot positions correctly
         const dot = document.createElement('span');
         dot.className = 'status-dot';
         hoursWidget.prepend(dot);

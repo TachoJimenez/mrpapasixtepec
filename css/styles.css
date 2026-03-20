@@ -957,6 +957,16 @@ footer {
   animation: slideInLeft 0.5s ease-out;
 }
 
+.hours-widget.widget-light {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #222;
+    border-left: 4px solid #000;
+}
+
+.hours-widget.widget-light h4 {
+    color: #000;
+}
+
 .hours-widget h4 {
   color: #ff4500;
   margin-bottom: 5px;
@@ -1035,6 +1045,9 @@ footer {
     font-size: 0.85rem;
     font-weight: bold;
     color: white;
+  }
+  .hours-widget.widget-light p::before {
+    color: #222;
   }
   .status-dot {
     position: static;

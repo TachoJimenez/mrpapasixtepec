@@ -982,11 +982,30 @@ footer {
 }
 
 /* Responsive adjustments */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hours-widget {
-    bottom: 100px;
+    bottom: 20px;
     left: 20px;
+    padding: 6px 15px;
     font-size: 0.8rem;
-    padding: 10px 15px;
+    border-radius: 50px;
+    border-left: none;
+    max-width: none;
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+  }
+  .hours-widget h4 {
+    display: none; /* Hide the big "Horario" title */
+  }
+  .hours-widget p {
+    font-size: 0; /* Hide original bulky text */
+    margin: 0;
+  }
+  .hours-widget p::before {
+    content: "🕒 Hoy: 3:00 PM - 10:30 PM"; /* Compact 1-liner */
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
   }
 }

@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="css/styles.css?v=2.7">
     <link rel="icon" type="image/png" href="favicon.png" sizes="512x512">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+.related-section { padding: 60px 0; background: #f8f5f0; }
+.related-section h3 { text-align: center; font-size: 1.8rem; color: var(--dark); margin-bottom: 40px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.related-card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; color: inherit; display: block; }
+.related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.related-card .rc-cat { font-size: 0.7rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+.related-card .rc-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); line-height: 1.4; }
+.related-card .rc-arrow { color: var(--primary); font-weight: 900; display: block; margin-top: 15px; }
+</style>
 </head>
 <body>
 
@@ -70,6 +80,27 @@
             </div>
         </div>
     </article>
+    <!-- Related Articles -->
+    <section class="related-section">
+        <div class="container">
+            <h3>Tambi&#233;n te puede interesar</h3>
+            <div class="related-grid">
+                <a href="articulo-deporte.html" class="related-card">
+                    <span class="rc-cat">DEPORTE</span>
+                    <span class="rc-title">Mr. Papas: recompensa de campeones</span>
+                    <span class="rc-arrow">Leer &#8594;</span>
+                </a>                <a href="articulo-noche-ixtepec.html" class="related-card">
+                    <span class="rc-cat">IXTEPEC</span>
+                    <span class="rc-title">Ixtepec bajo la luz de la luna</span>
+                    <span class="rc-arrow">Leer &#8594;</span>
+                </a>                <a href="articulo-psicologia-alitas.html" class="related-card">
+                    <span class="rc-cat">CURIOSIDADES</span>
+                    <span class="rc-title">La psicolog&#237;a del antojo picante</span>
+                    <span class="rc-arrow">Leer &#8594;</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">

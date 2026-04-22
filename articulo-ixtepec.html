@@ -20,6 +20,16 @@
         .back-to-blog { display: inline-block; margin-top: 40px; color: var(--dark); font-weight: bold; text-decoration: none; border: 2px solid var(--dark); padding: 10px 25px; border-radius: 30px; transition: all 0.3s; }
         .back-to-blog:hover { background: var(--primary); color: var(--dark); border-color: var(--primary); }
     </style>
+<style>
+.related-section { padding: 60px 0; background: #f8f5f0; }
+.related-section h3 { text-align: center; font-size: 1.8rem; color: var(--dark); margin-bottom: 40px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.related-card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; color: inherit; display: block; }
+.related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.related-card .rc-cat { font-size: 0.7rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+.related-card .rc-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); line-height: 1.4; }
+.related-card .rc-arrow { color: var(--primary); font-weight: 900; display: block; margin-top: 15px; }
+</style>
 </head>
 <body>
 
@@ -68,6 +78,27 @@
                 <div style="text-align: center;">
                     <a href="blog.html" class="back-to-blog">&larr; Volver al Blog</a>
                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Articles -->
+    <section class="related-section">
+        <div class="container">
+            <h3>Tambi&#233;n te puede interesar</h3>
+            <div class="related-grid">
+                <a href="articulo-noche-ixtepec.html" class="related-card">
+                    <span class="rc-cat">IXTEPEC</span>
+                    <span class="rc-title">Ixtepec bajo la luz de la luna</span>
+                    <span class="rc-arrow">Leer &#8594;</span>
+                </a>                <a href="articulo-origen.html" class="related-card">
+                    <span class="rc-cat">HISTORIA</span>
+                    <span class="rc-title">El Origen de Mr. Papas</span>
+                    <span class="rc-arrow">Leer &#8594;</span>
+                </a>                <a href="articulo-frescura.html" class="related-card">
+                    <span class="rc-cat">CALIDAD</span>
+                    <span class="rc-title">Del campo a tu mesa</span>
+                    <span class="rc-arrow">Leer &#8594;</span>
+                </a>
             </div>
         </div>
     </section>

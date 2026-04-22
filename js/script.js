@@ -79,4 +79,36 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStatus();
         setInterval(updateStatus, 60000);
     }
+
+    // --- Premium Menu Tabs Logic ---
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-tab');
+
+                // Remove active classes
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to current
+                btn.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    }
+
+    // --- Clickable Blog Cards ---
+    const blogCards = document.querySelectorAll('.blog-card');
+    blogCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            const link = card.querySelector('a');
+            if (link && e.target !== link) {
+                window.location.href = link.href;
+            }
+        });
+    });
 });

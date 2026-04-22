@@ -166,8 +166,17 @@
                             </div>
                             <p>La combinación perfecta entre la suavidad de las alitas y lo crujiente de nuestras papas premium.</p>
                             <div class="card-footer">
-                                <span class="badge-tag">Salsas Incluidas</span>
+                                <span class="badge-tag badge-salsas" onclick="toggleSalsas(this)" style="cursor:pointer;">🧄 Salsas Incluidas ▾</span>
                                 <span class="badge-tag">Porción Individual</span>
+                            </div>
+                            <div class="salsas-dropdown" style="display:none; margin-top:12px; display:none; flex-wrap:wrap; gap:8px;">
+                                <span class="badge-tag">BBQ</span>
+                                <span class="badge-tag">Búfalo</span>
+                                <span class="badge-tag">Ranch</span>
+                                <span class="badge-tag">Mango Habanero</span>
+                                <span class="badge-tag">Habanero</span>
+                                <span class="badge-tag">Chipotle</span>
+                                <span class="badge-tag">Cátsup</span>
                             </div>
                         </div>
                     </div>
@@ -179,7 +188,19 @@
                                 <span class="card-price">$150</span>
                             </div>
                             <p>Ideales para compartir o para un apetito voraz. Bañadas en la salsa de tu elección.</p>
-                            <div class="card-footer"><span class="badge-tag">Favorito</span></div>
+                            <div class="card-footer">
+                                <span class="badge-tag badge-salsas" onclick="toggleSalsas(this)" style="cursor:pointer;">🧄 Salsas Incluidas ▾</span>
+                                <span class="badge-tag">Favorito</span>
+                            </div>
+                            <div class="salsas-dropdown" style="display:none; flex-wrap:wrap; gap:8px; margin-top:12px;">
+                                <span class="badge-tag">BBQ</span>
+                                <span class="badge-tag">Búfalo</span>
+                                <span class="badge-tag">Ranch</span>
+                                <span class="badge-tag">Mango Habanero</span>
+                                <span class="badge-tag">Habanero</span>
+                                <span class="badge-tag">Chipotle</span>
+                                <span class="badge-tag">Cátsup</span>
+                            </div>
                         </div>
                     </div>
                     <div class="menu-premium-card">
@@ -190,20 +211,20 @@
                                 <span class="card-price">$295</span>
                             </div>
                             <p>El rey de las fiestas y reuniones. Una montaña de alitas con sabor inigualable.</p>
-                            <div class="card-footer"><span class="badge-tag">Combo Grupal</span></div>
+                            <div class="card-footer">
+                                <span class="badge-tag badge-salsas" onclick="toggleSalsas(this)" style="cursor:pointer;">🧄 Salsas Incluidas ▾</span>
+                                <span class="badge-tag">Combo Grupal</span>
+                            </div>
+                            <div class="salsas-dropdown" style="display:none; flex-wrap:wrap; gap:8px; margin-top:12px;">
+                                <span class="badge-tag">BBQ</span>
+                                <span class="badge-tag">Búfalo</span>
+                                <span class="badge-tag">Ranch</span>
+                                <span class="badge-tag">Mango Habanero</span>
+                                <span class="badge-tag">Habanero</span>
+                                <span class="badge-tag">Chipotle</span>
+                                <span class="badge-tag">Cátsup</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div style="margin-top: 30px; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px 30px;">
-                    <p style="color: #aaa; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">🧄 Aderezos disponibles</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                        <span class="badge-tag">BBQ</span>
-                        <span class="badge-tag">Búfalo</span>
-                        <span class="badge-tag">Ranch</span>
-                        <span class="badge-tag">Mango Habanero</span>
-                        <span class="badge-tag">Habanero</span>
-                        <span class="badge-tag">Chipotle</span>
-                        <span class="badge-tag">Cátsup</span>
                     </div>
                 </div>
             </div>
@@ -397,6 +418,14 @@
         </div>
     </footer>
     <script src="js/script.js?v=3.0"></script>
+    <script>
+    function toggleSalsas(btn) {
+        const dropdown = btn.closest('.card-footer').nextElementSibling;
+        const open = dropdown.style.display === 'flex';
+        dropdown.style.display = open ? 'none' : 'flex';
+        btn.textContent = open ? '🧄 Salsas Incluidas ▾' : '🧄 Salsas Incluidas ▴';
+    }
+    </script>
     <!-- Floating Social Media Buttons -->
     <a href="https://www.facebook.com/profile.php?id=61582075059270&rdid=pH4Ger0rtQgg3s9Q&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1bDFcYmZJK%2F#" target="_blank" class="floating-btn floating-facebook">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.196 0-5.192 1.583-5.192 4.615v3.385z"/></svg>

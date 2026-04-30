@@ -162,4 +162,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+<url><loc>https://mrpapasixtepec.com/articulo-calor-istmo.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://mrpapasixtepec.com/articulo-fiestas-ixtepec.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://mrpapasixtepec.com/articulo-antojo-nocturno.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

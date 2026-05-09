@@ -1,33 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll Reveal Animation
+    // === OPTIMIZED SCROLL REVEAL with IntersectionObserver ===
+    // Uses IntersectionObserver instead of scroll events for zero-jank reveals
     const reveals = document.querySelectorAll('.reveal');
-
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 150;
-
-        reveals.forEach((reveal) => {
-            const elementTop = reveal.getBoundingClientRect().top;
-
-            if (elementTop < windowHeight - elementVisible) {
-                reveal.classList.add('active');
-            } else {
-                reveal.classList.remove('active');
-            }
+    
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once revealed, stop observing (no re-hide on scroll up = no jank)
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
         });
+
+        reveals.forEach(reveal => revealObserver.observe(reveal));
+    } else {
+        // Fallback: just show everything immediately
+        reveals.forEach(reveal => reveal.classList.add('active'));
+    }
+
+    // === OPTIMIZED GLASSMORPHISM HEADER ===
+    // Uses requestAnimationFrame to avoid scroll jank
+    const header = document.querySelector('header');
+    let lastScrollY = 0;
+    let ticking = false;
+
+    const updateHeader = () => {
+        if (lastScrollY > 80) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        ticking = false;
     };
 
-    window.addEventListener('scroll', revealOnScroll);
-    // Trigger once on load
-    revealOnScroll();
+    window.addEventListener('scroll', () => {
+        lastScrollY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }, { passive: true });
 
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
@@ -41,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('active');
         });
     }
+
     // Dynamic Hours Status Indicator
     const hoursWidget = document.querySelector('.hours-widget');
     if (hoursWidget) {
@@ -58,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             const timeInMinutes = hour * 60 + minute;
-            const openTime = 15 * 60; // 15:00
-            const warningTime = 21 * 60 + 30; // 21:30
-            const closeTime = 22 * 60 + 30; // 22:30
+            const openTime = 15 * 60;
+            const warningTime = 21 * 60 + 30;
+            const closeTime = 22 * 60 + 30;
 
             dot.classList.remove('open', 'closing', 'closed');
 
@@ -88,12 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const target = btn.getAttribute('data-tab');
-
-                // Remove active classes
                 tabBtns.forEach(b => b.classList.remove('active'));
                 tabContents.forEach(c => c.classList.remove('active'));
-
-                // Add active class to current
                 btn.classList.add('active');
                 document.getElementById(target).classList.add('active');
             });

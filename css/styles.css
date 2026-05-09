@@ -1304,3 +1304,20 @@ header.scrolled {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
 }
+
+/* === QUICK ACCESS CARD HOVER (CSS-only, no JS) === */
+.container a > div[style*="border-radius: 20px"] {
+  will-change: transform;
+}
+.container a > div[style*="border-radius: 20px"]:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12) !important;
+}
+
+/* === GPU ACCELERATION FOR SCROLL PERFORMANCE === */
+header {
+  will-change: background-color, backdrop-filter;
+}
+.reveal {
+  will-change: opacity, transform;
+}
